@@ -1,0 +1,19 @@
+{
+	"name": "movie_renting_service",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nwaguvictor/movie_renting_service.git"
+	},
+	"author": "victechie",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nwaguvictor/movie_renting_service/issues"
+	},
+	"homepage": "https://github.com/nwaguvictor/movie_renting_service#index.js"
+}
