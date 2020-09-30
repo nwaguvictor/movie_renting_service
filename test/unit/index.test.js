@@ -1,7 +1,6 @@
 // to disable all logging
 console.log = function () { };
 const movieStore = require('./../../index');
-const movies = require('./../../dev_data');
 
 describe('movieStore', () => {
     // falsy values
@@ -42,7 +41,7 @@ describe('movieStore', () => {
         it('should return false if price given is less than the movie price', () => {
             expect(movieStore.rentMovie('movie1', 1)).toBeFalsy;
         });
-        it('should return the movie if movie is found and price is okay', () => {
+        it('should return true if movie is found and price is okay', () => {
             expect(movieStore.rentMovie('movie1', 500)).toBeTruthy;
         })
     });
