@@ -17,6 +17,7 @@ const movieStore = (function () {
             }
             availableMovies.push(movie);
             allMovies.push(movie);
+            return movie;
         },
         getMovie: function (title) {
             const movie = allMovies.find(movie => movie.title === title);
@@ -40,7 +41,7 @@ const movieStore = (function () {
             }
 
             // confirm the movie's price
-            if (movieFound.price > price) {
+            if (price < movieFound.price) {
                 console.log(`Sorry you can't rent ${movieFound.title} with the price $${price} \n`);
                 return false;
             }
@@ -50,6 +51,8 @@ const movieStore = (function () {
             rentedMovies.push(movieFound);
             const updatedMovieList = availableMovies.filter(movie => movie.isRented === false);
             availableMovies = updatedMovieList;
+
+            return movieFound;
             
         },
         getRentedMovies: function () {
@@ -72,13 +75,10 @@ movies.forEach(movie => movieStore.addMovie(movie.title, movie.director, movie.r
 
 movieStore.addMovie('new movie', 'victor', 120, 0);
 
-// Display all movies
-// console.log(movieStore.getAllMovies());
-
 // Lets rent some movies
 movieStore.rentMovie('movie1', 500);
 movieStore.rentMovie('movie2', 400);
-movieStore.rentMovie('movie7', 200);
+movieStore.rentMovie('movie3', 200);
 
 // display available(non-rented) movies
 console.log(movieStore.getAvailableMovies());
@@ -89,3 +89,5 @@ console.log(movieStore.getRentedMovies());
 // display all movies
 console.log(movieStore.getAllMovies());
 
+// Export the MovieStore Object
+module.exports = movieStore;

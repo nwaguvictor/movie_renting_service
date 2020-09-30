@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.js",
+		"test": "jest --watchAll --verbose"
 	},
 	"repository": {
 		"type": "git",
@@ -15,5 +16,8 @@
 	"bugs": {
 		"url": "https://github.com/nwaguvictor/movie_renting_service/issues"
 	},
-	"homepage": "https://github.com/nwaguvictor/movie_renting_service#index.js"
+	"homepage": "https://github.com/nwaguvictor/movie_renting_service#index.js",
+	"devDependencies": {
+		"jest": "^26.4.2"
+	}
 }
